@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from "react";
+import Select from "./Select/Select";
+// icon
+import { Icon } from "@iconify/react";
+export default function App() {
+  const options = [
+    {
+      label: "Select1",
+      value: "select1",
+      selected: true,
+    },
+    {
+      label: "Select2",
+      value: "select2",
+      selected: false,
+    },
+  ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Select
+        options={options}
+        dropdownIcon={<Icon icon="ant-design:caret-down-filled" />}
+      />
     </div>
   );
 }
-
-export default App;
